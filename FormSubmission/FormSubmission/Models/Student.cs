@@ -20,6 +20,14 @@ namespace FormSubmission.Models
         [Required]
         [StringLength(500,MinimumLength =20)]
         public string Address { get; set; }
-        
+        [Required]
+        public string Gender { get; set; }
+        [Required]
+        public string Profession { get; set; }
+        [Required]
+        public string[] Hobbies { get; set; }
+        public DateTime Dob { get; set; }
+
+
     }
 }
