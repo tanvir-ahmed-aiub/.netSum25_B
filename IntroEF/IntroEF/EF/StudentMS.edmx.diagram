@@ -7,6 +7,7 @@
       <Diagram DiagramId="c879731cdc7648429e2709fac5e5a495" Name="Diagram1">
         <EntityTypeShape EntityType="Sum25_BModel.Student" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="Sum25_BModel.Department" Width="1.5" PointX="3.375" PointY="0.75" />
+        <AssociationConnector Association="Sum25_BModel.FK_Students_Departments" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

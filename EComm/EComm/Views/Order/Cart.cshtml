@@ -1,0 +1,34 @@
+﻿
+@{
+    ViewBag.Title = "Cart";
+}
+
+<h2>Cart</h2>
+<table class="table table-bordered">
+    <tr>
+        <th>Name</th>
+        <th>Price</th>
+        <th>Qty</th>
+        <th>Unit Total</th>
+    </tr>
+    @{ 
+        decimal gTotal = 0;
+        decimal unitTotal = 0;
+    }
+    @foreach (var item in Model)
+    {
+        unitTotal = item.Qty * item.Price;
+        gTotal += unitTotal;
+        <tr>
+            <td>@item.Name</td>
+            <td>@item.Price</td>
+            <td>@item.Qty</td>
+            <td>@unitTotal</td>
+        </tr>
+    }
+    <tr>
+        <th colspan="3" class="text-right">Grand Total</th>
+        <th>@gTotal</th>
+    </tr>
+</table>
+
