@@ -22,13 +22,25 @@
         <tr>
             <td>@item.Name</td>
             <td>@item.Price</td>
-            <td>@item.Qty</td>
+            <td>
+                <a href="/order/decrease/@item.Id"><span class="glyphicon-minus glyphicon"></span></a>
+                @item.Qty 
+                <a href="/order/increase/@item.Id"><span class="glyphicon-plus glyphicon"></span></a>
+            </td>
             <td>@unitTotal</td>
         </tr>
     }
     <tr>
         <th colspan="3" class="text-right">Grand Total</th>
         <th>@gTotal</th>
+    </tr>
+    <tr>
+        <td>
+            <form method="post" action="/order/placeorder">
+                <input type="hidden" name="gTotal" value="@gTotal" />
+                <input type="submit" value="Place Order" class="btn btn-danger" />
+            </form>
+        </td>
     </tr>
 </table>
 

@@ -1,0 +1,27 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+@if (TempData["Msg"] != null) { 
+    <div class="alert alert-@TempData["Class"]">@TempData["Msg"]</div>
+}
+
+<div class="container d-flex align-items-center justify-content-center vh-100">
+    <div class="card p-4 shadow" style="max-width: 400px; width: 100%;">
+        <h3 class="card-title text-center mb-4">Login</h3>
+        <form method="post">
+            <div class="mb-3">
+                <label for="email" class="form-label">Username</label>
+                <input type="text" class="form-control" name="username" placeholder="Username"  />
+            </div>
+            <div class="mb-3">
+                <label for="password" class="form-label">Password</label>
+                <input type="password" class="form-control" name="password" placeholder="Password"  />
+            </div>
+            <div class="d-grid">
+                <button type="submit" class="btn btn-primary">Login</button>
+            </div>
+        </form>
+    </div>
+</div>

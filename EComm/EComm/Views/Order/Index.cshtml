@@ -3,7 +3,9 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+@if (TempData["Msg"] != null) { 
+    <p class="alert alert-info">@TempData["Msg"]</p>
+}
 <div class="row">
     @foreach (var item in Model)
     {
