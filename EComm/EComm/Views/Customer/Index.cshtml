@@ -1,0 +1,33 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Orders</h2>
+<table class="table table-bordered">
+    <tr>
+        <th>Id</th>
+        <th>Date</th>
+        <th>Total</th>
+        <th>Status</th>
+        <th></th>
+    </tr>
+    
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.Id</td>
+            <td>@item.Date</td>
+            <td>@item.Total</td>
+            <td>@item.Status.Name</td>
+            <td>
+                <a class="btn btn-primary" href="/order/details/@item.Id">Details</a>
+                @if (item.StatusId == 1) { 
+                    <a class="btn btn-danger" href="/order/cancelbyuser/@item.Id">Cancel</a>
+                }
+                
+            </td>
+        </tr>
+    }
+</table>
+

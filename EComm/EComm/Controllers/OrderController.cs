@@ -99,5 +99,17 @@ namespace EComm.Controllers
             p.Qty--;
             return RedirectToAction("Cart");
         }
+        [Logged]
+        public ActionResult CancelByUser(int id) {
+            var od = db.Orders.Find(id);
+            od.StatusId = 3;
+            db.SaveChanges();
+            return RedirectToAction("Index","Customer");
+        }
+        [Logged]
+        public ActionResult Details(int id) {
+            var od = db.Orders.Find(id);
+            return View(od);
+        }
     }
 }

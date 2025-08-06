@@ -18,6 +18,7 @@ namespace EComm.EF
         public EComm_Sum25_BEntities()
             : base("name=EComm_Sum25_BEntities")
         {
+            //this.Configuration.LazyLoadingEnabled = false;
         }
     
         protected override void OnModelCreating(DbModelBuilder modelBuilder)

@@ -1,0 +1,32 @@
+﻿
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+<h3>Order Id: @Model.Id</h3>
+<h3>Order Status: @Model.Status.Name</h3>
+<h3>Order Total: @Model.Total</h3>
+
+<table class="table table-bordered">
+    <tr>
+        <th>Name</th>
+        <th>Qty</th>
+        <th>Price</th>
+        <th>Unit Price</th>
+    </tr>
+    @foreach (var item in Model.OrderDetails) 
+    {
+        <tr>
+            <td>@item.Product.Name</td>
+            <td>@item.Qty</td>
+            <td>@item.Price</td>
+            <td>@(item.Qty * item.Price)</td>
+        </tr>
+    }
+    <tr>
+        <th colspan="3">Grand Total</th>
+        <th >@Model.Total</th>
+    </tr>
+</table>
+
